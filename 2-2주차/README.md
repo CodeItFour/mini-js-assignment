@@ -10,7 +10,7 @@
 
 ## 구현 내용
 <!-- 어떻게 문제를 해결했는지 간단히 설명해주세요 -->
- <script src="counter.js" defer></script>
+ <script src="counter.js" defer></script>    
  위에 script 코드에 defer 속성을 추가하여 해결했습니다. 
 
 
