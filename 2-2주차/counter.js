@@ -7,7 +7,7 @@ const messageDiv = document.getElementById("message");
 button.addEventListener("click", function () {
   clickCount++;
   countDisplay.textContent = clickCount;
-
+   
   if (clickCount === 1) {
     messageDiv.innerHTML = '<p style="color: green;">첫 번째 클릭!</p>';
   } else if (clickCount === 5) {
