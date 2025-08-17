@@ -16,6 +16,8 @@ function calculatePrice(age, bage) {
     }
 
     switch (true) {
+        case age === "독립유공자":
+            return "무료(독립유공자)";
         case age <= 3:
             return "무료";
         case age <= 12:
@@ -32,7 +34,7 @@ function calculatePrice(age, bage) {
  */
 function testAge(age, bage) {
     const result = calculatePrice(age, bage);
-    const display = age === null ? 'null' : `${age}살${bage ? ` (${bage})` : ''}`;
+    const display = age === null ? 'null' : `${age}살;${bage ? ` (${bage})` : ''}`;
 
     // document → 브라우저가 HTML 문서를 객체로 표현한 것(DOM의 최상위 진입점)
     // getElementById('result') → HTML에서 id="result"인 요소를 찾아 반환
