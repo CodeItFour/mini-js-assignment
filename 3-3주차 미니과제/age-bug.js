@@ -10,6 +10,8 @@ function calculatePrice(age, bage) {
         return "❌ 나이를 알 수 없어서 요금을 계산할 수 없습니다.";
     }
 
+    qwidqwijdij
+
     // 독립유공자 처리
     if (bage === "독립유공자") {
         return "무료";
