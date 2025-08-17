@@ -3,22 +3,22 @@
 ### 과제 1
 다음 코드의 결과를 예측하고 `?` 부분을 수정해주세요
 ```javascript
-console.log(typeof []);          // ?
-console.log(typeof null);        // ?
-console.log(null == undefined);  // ?
-console.log(null === undefined); // ?
+console.log(typeof []);          // object
+console.log(typeof null);        // object
+console.log(null == undefined);  // true (느슨한 비교는 형변환이 같으면 됨)
+console.log(null === undefined); // false (엄격한 비교는 자료형까지 비교함)
 ```
 
 ### 과제 2
 올바른 연산자를 선택하세요!
 ```javascript
-const score = 0;           // 0점도 유효한 점수
+const score = 0;           // 0점도 유효한 점수 
 const name = "";           // 빈 이름은 "익명"으로
 const url = null;          // 아직 설정 안됨
 const isVip = false;       // 의도적으로 일반회원
 
 // TODO: 올바른 연산자 선택
-const finalScore = score ?? 100;    // 0점 유지하고 싶음
+const finalScore = score ?? 100;    // 0점 유지하고 싶음 
 const finalName = name || "익명";    // 빈 이름은 익명으로
 const finalUrl = url ?? "/default"; // null만 기본값으로
 ```
@@ -34,7 +34,7 @@ const finalUrl = url ?? "/default"; // null만 기본값으로
 - 각 step 별 문제를 해결하기 
 
 
-**미션**:
+**미션**
 ---
 #### step1. 조건문을 수정해서 0살도 올바르게 처리하기
 #### step2. 조건이 올바르게 수정되면 `calculatePrice` 를 `switch case` 문으로 변경 하기
@@ -44,8 +44,6 @@ const finalUrl = url ?? "/default"; // null만 기본값으로
 ---
 
 ###  멘토링시 각 step 을 구현한 이유와 해결과정을 설명해주 시면 좋습니다 🤡
-
-
 
 # 🤡 팁!! 반드시 읽어주세요 !!  
 
@@ -117,7 +115,7 @@ const config = {
 
 // 각각 적절한 연산자 선택
 config.debug && console.log("디버그 모드");           // false면 실행 안됨
-config.timeout || console.log("타임아웃 미설정");      // 0이므로 실행됨
+config.timeout ?? console.log("타임아웃 미설정");      // 0이므로 실행됨
 config.apiUrl ?? console.log("API URL 미설정");       // null이므로 실행됨
 ```
 

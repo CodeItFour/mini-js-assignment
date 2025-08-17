@@ -16,6 +16,7 @@
         <li>4~12세: 5,000원</li>
         <li>13~64세: 10,000원</li>
         <li>65세 이상: 3,000원</li>
+        <li>독립유공자: 나이 상관 없이 무료</li>
     </ul>
     
     <button onclick="testAge(0)">0살 테스트</button>
@@ -24,6 +25,10 @@
     <button onclick="testAge(25)">25살 테스트</button>
     <button onclick="testAge(70)">70살 테스트</button>
     <button onclick="testAge(null)">null 테스트</button>
+    <!-- 독립유공자 테스트 버튼-->
+    <button onclick="testAge(55,'독립유공자')"> 55살 독립유공자 테스트</button>
+    <button onclick="testAge(90,'독립유공자')"> 90살 독립유공자 테스트</button>
+    <button onclick="testAge(100,'독립유공자')"> 100살 독립유공자 테스트</button>
     
     <div id="result"></div>
 
