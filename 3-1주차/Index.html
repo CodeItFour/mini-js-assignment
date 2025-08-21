@@ -1,34 +1,38 @@
+
+
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>놀이공원 요금 계산기</title>
 </head>
+
 <body>
     <h1>🎢 놀이공원 요금 계산기</h1>
     <p>나이에 따라 입장료가 다릅니다.</p>
     <p>🚨 문제: 0살 아기의 요금을 계산할 수 없습니다. 어떻게 해결할까요?</p>
-    
+
     <h3>📋 요금표</h3>
     <ul>
         <li>0~3세: 무료</li>
         <li>4~12세: 5,000원</li>
         <li>13~64세: 10,000원</li>
         <li>65세 이상: 3,000원</li>
-        <li>독립유공자: 무료</li>
     </ul>
-    
+
     <button onclick="testAge(0)">0살 테스트</button>
     <button onclick="testAge(3)">3살 테스트</button>
     <button onclick="testAge(8)">8살 테스트</button>
     <button onclick="testAge(25)">25살 테스트</button>
     <button onclick="testAge(70)">70살 테스트</button>
     <button onclick="testAge(null)">null 테스트</button>
-    <button onclick="testAge('독립유공자')">독립유공자 테스트</button>
-    
+    <button onclick="testAge(null,'독립유공자')">독립유공자 테스트</button>
+
     <div id="result"></div>
 
     <script src="age-bug.js"></script>
 </body>
+
 </html>

@@ -3,24 +3,28 @@
 ### 과제 1
 다음 코드의 결과를 예측하고 `?` 부분을 수정해주세요
 ```javascript
-console.log(typeof []);          // ?
-console.log(typeof null);        // ?
-console.log(null == undefined);  // ?
-console.log(null === undefined); // ?
+console.log(typeof []);          // "object" = 배열의 한 객체라 오브젝트에 속함
+console.log(typeof null);        // "object" = 원래는 null같은 타입의 이름이 나와야하나 오래된 설계 버그지만 그대로 유지됨(하위 호환성을 위해 남겨둠.)
+console.log(null == undefined);  // "true" = 동등비교기때문에 true값이 나오게 된다.
+console.log(null === undefined); // "false" = 값과 데이터 타입까지 비교하기 때문에 false값이 나오게 된다.
 ```
 
 ### 과제 2
 올바른 연산자를 선택하세요!
 ```javascript
-const score = 0;           // 0점도 유효한 점수
-const name = "";           // 빈 이름은 "익명"으로
-const url = null;          // 아직 설정 안됨
-const isVip = false;       // 의도적으로 일반회원
+const score = 0;           // 0점도 유효한 점수 = '??' (0점도 유효한 점수로 표현해야 되기 때문에 '??'사용)
+const name = "";           // 빈 이름은 "익명"으로 = '||' (익명은 빈값이기 때문에 '||')
+const url = null;          // 아직 설정 안됨 = '??' (null/underfined는 기본값) 
+const isVip = false;       // 의도적으로 일반회원 = "??" (0, "", false는 유지)  
+
+값이 0, ""(빈문자열), false여도 유지해야 한다 → ??
+
+빈 문자열이나 0도 기본값으로 바꿔야 한다 → ||
 
 // TODO: 올바른 연산자 선택
-const finalScore = score ?? 100;    // 0점 유지하고 싶음
-const finalName = name || "익명";    // 빈 이름은 익명으로
-const finalUrl = url ?? "/default"; // null만 기본값으로
+const finalScore = score ?? 100;    // 0점 유지하고 싶음(O)
+const finalName = name || "익명";    // 빈 이름은 익명으로(O)
+const finalUrl = url ?? "/default"; // null만 기본값으로(O)
 ```
 
 ### 과제 3
@@ -43,7 +47,18 @@ const finalUrl = url ?? "/default"; // null만 기본값으로
 
 ---
 
-###  멘토링시 각 step 을 구현한 이유와 해결과정을 설명해주 시면 좋습니다 🤡
+###  멘토링시 각 step 을 구현한 이유와 해결과정을 설명해주시면 좋습니다 🤡
+step1. index.html을 실행 후 0살일때 if(age) 에서 0살을 falsy로 잘못처리되어 오류가 발생하는것을 확인. -> 그말인 즉슨 0살도 정상적으로 "무료"로 계산되도록 변경해야함 -> if (age) 대신에, 진짜 "나이가 없다"는 상황만 검사해야함 ->     
+//내용추가 하여 나이가 없는 상황만 검사
+if (age == null || Number.isNaN(age) || age < 0) {
+        return "❌ 나이를 알 수 없어서 요금을 계산할 수 없습니다.";
+    }
+-> 추가 후 "나이를 알 수 없어서 요금을 계산할 수 없습니다"가 아닌 'undefined'값이 표출되는걸 확인.
+
+step2. if문에서 switch case문으로 변경완료
+step3. bage 파라미터를 추가하여 age,bage를 받도록 설정완료
+step4. 독립유공자 버튼 추가및 무료 표출확인완료. (calculatePrice 순서를 badge 먼저 검사로 수정하여 첫번째 인자에 null을 포함하여도 무료로 표출되게 변경)
+
 
 
 

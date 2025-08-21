@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>깊은복사, 얕은복사</title>
+    <style>
+        pre {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            margin: 10px 0;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>깊은복사 & 얕은복사 구현  를 구현해봅시다 🤡</h1>
+    
+    <h2>Step 1: Object.assign 직접 구현하기</h2>
+    <p><strong>문제:</strong> myObjectAssign 함수를 완성하세요. 이 함수는 Object.assign과 같은 기능을 해야 합니다.</p>
+    <pre>
+function myObjectAssign(target, ...sources) {
+
+    // 👈 여기에 코드를 작성하세요
+    * 힌트: for문을 사용해서 sources의 모든 속성을 target에 복사
+}
+    </pre>
+    <button onclick="testStep1()">Step 1 테스트</button>
+    <pre id="result1"></pre>
+    
+    <h2>Step 2: 깊은복사 함수 구현하기</h2>
+    <p><strong>문제:</strong> myDeepCopy 함수를 완성하세요. 중첩된 객체와 배열까지 모두 복사해야 합니다.</p>
+    <pre>
+function myDeepCopy(obj) {
+
+    // 👈 여기에 코드를 작성하세요
+    * 힌트: 재귀함수 사용, typeof로 타입 체크, Array.isArray로 배열 체크
+}
+    </pre>
+    <button onclick="testStep2()">Step 2 테스트</button>
+    <pre id="result2"></pre>
+    
+    <h2>Step 3: 얕은복사와 깊은복사 차이 확인하기</h2>
+    <p><strong>문제:</strong> 아래 코드의 빈 부분을 채워서 얕은복사와 깊은복사의 차이를 확인하세요.</p>
+    <pre>
+function compareCopyMethods() {
+    const original = { name: 'John', info: { age: 25 } };
+    
+    // 얕은복사 (스프레드 연산자 사용)
+    const shallow =  👈 여기에 코드 작성
+    
+    // 깊은복사 (위에서 만든 함수 사용)
+    const deep =  👈 여기에 코드 작성
+    
+    // 테스트
+    shallow.info.age = 30;
+    deep.info.age = 35;
+    
+    console.log('original.info.age:', original.info.age); // 결과는?
+}
+    </pre>
+    <button onclick="testStep3()">Step 3 테스트</button>
+    <pre id="result3"></pre>
+
+    <script src="script.js"></script>
+</body>
+</html>
