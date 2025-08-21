@@ -3,10 +3,10 @@
 ### 과제 1
 다음 코드의 결과를 예측하고 `?` 부분을 수정해주세요
 ```javascript
-console.log(typeof []);          // object
-console.log(typeof null);        // object
-console.log(null == undefined);  // true
-console.log(null === undefined); // false
+console.log(typeof []);          // ?
+console.log(typeof null);        // ?
+console.log(null == undefined);  // ?
+console.log(null === undefined); // ?
 ```
 
 ### 과제 2
