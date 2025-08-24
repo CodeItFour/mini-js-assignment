@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>핸드폰 번호 검증기</title>
+</head>
+
+<body>
+    <h1>📱 핸드폰 번호 검증기</h1>
+    <p>입력한 핸드폰 번호가 올바른 형식인지 검증합니다.</p>
+    <p>🚨 문제: 특정 번호들이 제대로 검증되지 않습니다. 올바르게 검증되도록 js 파일을 수정해주세요</p>
+
+    <h3>📋 올바른 형식</h3>
+    <ul>
+        <li>010-1234-5678</li>
+        <li>011-123-4567</li>
+        <li>016-123-4567</li>
+        <li>017-123-4567</li>
+        <li>018-123-4567</li>
+        <li>019-123-4567</li>
+    </ul>
+
+    <button onclick="testPhone('010-1234-5678')">010-1234-5678</button>
+    <button onclick="testPhone('011-123-4567')">011-123-4567</button>
+    <button onclick="testPhone('010-12345678')">010-12345678 (하이픈 없음)</button>
+    <button onclick="testPhone('010-123-45678')">010-123-45678 (잘못된 자릿수)</button>
+    <button onclick="testPhone('020-1234-5678')">020-1234-5678 (없는 번호)</button>
+    <button onclick="testPhone('')">빈 문자열</button>
+
+    <div id="result"></div>
+
+    <script src="phone-bug.js"></script>
+</body>
+
+</html>
